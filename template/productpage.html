@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+
+<body>
+    <div class="main-div">
+        <div class="head-div">
+            <div class='img-logo'>
+                <img src="{% static 'img/download.png' %}" alt="">
+                <a id="logo">DailyMart</a>
+            </div>
+            <a href="{% url 'homepage' %}"><b>HOME</b></a>
+        </div>
+
+        <div class="head-one-div">
+            <center>
+                <p>✯ Top Brands ✯ COD ✯ Premium Quality.</p>
+            </center>
+        </div>
+        <div class="product-div">
+            <div class="product">
+                <center>
+                    <div class="product-image">
+                        <h1>BooK</h1>
+                        <a href="">
+                            <img class="product-img" src="{% static 'img/books.jpg' %}" alt="book">
+                        </a>
+                    </div>
+                    
+                </center>
+            </div>
+            <div class="details">
+                <div class="product-info">
+                        <h4>Discription</h4>
+                        <h4>Quantity</h4>
+                        <h4>Delivery time</h4>
+
+                </div>
+                <div class="buttonn">
+                    <button>Check Out</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-div">
+        <div class="discription">
+            <h1>DailyMart</h1>
+            <p>We are a market Store based in Thiruvananthapuram.</p>
+            <p>We have Ambitious Development plans in various parts of Kerala.</p>
+            <p>We offer a combination of in-store shopping experience combined with Online Shopping,
+                Bundle Packs & Home Delivery options.</p>
+            <h3> Connect with us :</h3>
+        </div>
+        <div class="social">
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <img class="ss" src="{% static 'img/ig-instagram-icon.png' %}" alt="fb">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="ss" src="{% static 'img/linkedin-app-icon.png' %}" alt="wp">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="ss" src="{% static 'img/twitter-app-icon.png' %}" alt="tw">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="ss" src="{% static 'img/wa-whatsapp-icon.png' %}" alt="ln">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="ss" src="{% static 'img/youtube-app-icon.png' %}" alt="yb">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>copyright &copy;2023 <a style="text-decoration: none;color:white;" href="{% url 'homepage' %}">DailyMart</a> </p>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
