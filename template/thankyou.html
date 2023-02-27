@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style4.css' %}">
+
+<body>
+    <div class="main-div">
+        <div class="head-div">
+            <div class="img-logo">
+                <img src="{% static 'img/download.png' %}" alt="">
+                <a id="logo">DailyMart</a>
+            </div>
+            <a href="{% url 'homepage' %}"><b>HOME</b></a>
+        </div>
+    </div>
+    <div class="message">
+        <h1>Order successfully placed</h1>
+        <p>Your order will be delivered by 17th Feb,Friday</p><br>
+        <p>We are pleased to confirm your order number</p>
+        <p>#9865372</p>
+        <h2>Thank you for shopping with <a style="text-decoration: none;color:rgb(255, 0, 0)"
+                href="{% url 'homepage' %}">DailyMart</a></h2>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,17 @@
     <title>Invoice</title>
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style3.css' %}">
+
 <body>
     <div class="main-div">
-        <div class="head-div" >
+        <div class="head-div">
             <div class="invoice">
                 <h1>Order Summary</h1>
-
             </div>
             <div class="dailymart">
-                <a style="color:white;text-decoration: none;" href="{% url 'homepage' %}"><h1 >DailyMart</h1></a>
+                <a style="color:white;text-decoration: none;" href="{% url 'homepage' %}">
+                    <h1>DailyMart</h1>
+                </a>
             </div>
         </div>
         <div class="second-div">
@@ -31,31 +34,33 @@
             </div>
             <div class="date">
                 <h2>Delivery Details:</h2>
-               <p>FREE Delivery</p>
-               <p>Delivery by 17th Feb,Friday</p>
-               <p>10 Days Return Policy</p>
+                <p>FREE Delivery</p>
+                <p>Delivery by 17th Feb,Friday</p>
+                <p>10 Days Return Policy</p>
             </div>
         </div>
         <div class="third-div">
-
             <div class="details">
                 <h2>Product Details:</h2>
-
+                <img src="{{data.img.url}}" alt="">
+                <p>Name:{{data.name}}({{q}} items)</p>
             </div>
             <div class="price">
                 <h2>Price Details:</h2>
-                <p>Price(1 item)- 30</p>
-                <p>Discount  -2%</p>
+                <p>Quantity:{{q}}</p>
+                <p>Unit price-Rs.{{data.price}}</p>
+                <p>Discount -{{data.discount}}%</p>
                 <p>Delivery Charges - FREE Delivery</p>
-                <p>Total Amount - Rs.28</p>
+                <p>Total Amount - Rs.{{total2}}</p>
             </div>
         </div>
         <div class="buttonn">
-            <button type="submit"> Continue</button>
+            <form action="{% url 'thankyoupage' %}">
+                <button type="submit"> Continue</button>
+            </form>
         </div>
     </div>
 
-        
 
 
 
@@ -69,6 +74,8 @@
 
 
 
-    
+
+
 </body>
+
 </html>

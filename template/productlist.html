@@ -19,7 +19,6 @@
             </div>
             <a href="{% url 'homepage' %}"><b>HOME</b></a>
         </div>
-
         <div class="head-one-div">
             <center>
                 <h2>PRODUCTS</h2>
@@ -27,104 +26,29 @@
             </center>
         </div>
         <div class="product-div">
+            {% if data %}
+            {% for i in data %}
             <div class="product">
                 <center>
                     <div class="product-image">
-
-                        <a href="">
-                            <img src="{% static 'img/paperclip.jpg' %}" alt="Image">
+                        <a href="{% url 'productpage' %}?id={{i.id}}">
+                            <img src="{{i.img.url}}" alt="Image">
                         </a>
                     </div>
                     <div class="product-info">
-                        <h2>Name</h3>
-                            <h4>Discription</h4>
-
+                        <h2>{{i.name}}</h3>
+                            <h4>Rs.{{i.price}}</h4>
                     </div>
-                    <button>Add to Cart</button>
-
-
+                    <a href="{% url 'productpage' %}?id={{i.id}}">
+                        <button>Buy Now</button>
+                    </a>
                 </center>
             </div>
-            <div class="product">
-                <center>
-                    <div class="product-image">
-
-                        <a href="">
-                            <img src="{% static 'img/paperclip.jpg' %}" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2>Name</h3>
-                            <h4>Discription</h4>
-
-                    </div>
-                    <button>Add to Cart</button>
-
-
-                </center>
-            </div>
-            <div class="product">
-                <center>
-                    <div class="product-image">
-
-                        <a href="">
-                            <img src="{% static 'img/paperclip.jpg' %}" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2>Name</h3>
-                            <h4>Discription</h4>
-
-                    </div>
-                    <button>Add to Cart</button>
-
-
-                </center>
-            </div>
-            <div class="product">
-                <center>
-                    <div class="product-image">
-
-                        <a href="">
-                            <img src="{% static 'img/paperclip.jpg' %}" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2>Name</h3>
-                            <h4>Discription</h4>
-
-                    </div>
-                    <button>Add to Cart</button>
-
-
-                </center>
-            </div>
-            <div class="product">
-                <center>
-                    <div class="product-image">
-
-                        <a href="">
-                            <img src="{% static 'img/paperclip.jpg' %}" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <h2>Name</h3>
-                            <h4>Discription</h4>
-
-                    </div>
-                    <button>Add to Cart</button>
-
-
-                </center>
-            </div>
-
-
-
+            {% endfor %}
+            {% else %}
+            <h1 style="color: red;">NO PRODUCTS AVAILABLE</h1>
+            {% endif %}
         </div>
-
-
-
-
     </div>
     <div class="footer-div">
         <div class="discription">
@@ -133,10 +57,9 @@
             <p>We have Ambitious Development plans in various parts of Kerala.</p>
             <p>We offer a combination of in-store shopping experience combined with Online Shopping,
                 Bundle Packs & Home Delivery options.</p>
-                <h3> Connect with us :</h3>
+            <h3> Connect with us :</h3>
         </div>
         <div class="social">
-            
             <ul>
                 <li>
                     <a href="#">
@@ -163,16 +86,12 @@
                         <img class="ss" src="{% static 'img/youtube-app-icon.png' %}" alt="yb">
                     </a>
                 </li>
-
             </ul>
         </div>
-        <div class="copyright" >
-            <p>copyright &copy;2023 <a style="text-decoration: none;color:white;" href="{% url 'homepage' %}">DailyMart</a>  </p>
+        <div class="copyright">
+            <p>copyright &copy;2023 <a style="text-decoration: none;color:white;"
+                    href="{% url 'homepage' %}">DailyMart</a> </p>
         </div>
-
-
-
-
     </div>
 </body>
 

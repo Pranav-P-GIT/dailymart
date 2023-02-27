@@ -13,7 +13,7 @@
 
 <body>
     <div class="main-div" style="height:220vh;">
-        <!--First page start-->
+
         <div class="first-div">
             <div class="head-div">
                 <div class="img-logo">
@@ -23,13 +23,9 @@
                 <a href="#"><b>HOME</b></a>
             </div>
             <div class="body-div">
-                <img src="{% static 'img/pexels-nataliya-vaitkevich-6214474 (1).jpg' %}" alt="" style="width: 100%;height:700px;">
+                <img src="{% static 'img/pexels-nataliya-vaitkevich-6214474 (1).jpg' %}" alt=""
+                    style="width: 100%;height:700px;">
             </div>
-            <!--First page end-->
-
-
-
-
             <div class="second-div">
                 <div class="head-two-div">
                     <center>
@@ -39,47 +35,16 @@
                 </div>
                 <div class="body-two-div">
                     <div class="product-div">
+                        {% for i in data %}
                         <div class="product">
                             <center>
-                                <h1>PaperClips</h1>
-                                <a href="">
-                                    <img src="{% static 'img/paperclip.jpg' %}" alt="image" style="width:100%">
+                                <h1>{{i.name}}</h1>
+                                <a href="{% url 'productlist' %}?id={{i.id}}">
+                                    <img src="{{i.img.url}}" alt="pen" style="width:100%">
                                 </a>
-
-
                             </center>
                         </div>
-                        <div class="product">
-                            <center>
-                                <h1>Pen</h1>
-                                <a href="">
-                                    <img src="{% static 'img/pen.jpg' %}" alt="pen" style="width:100%">
-                                </a>
-
-
-
-                            </center>
-                        </div>
-                        <div class="product">
-                            <center>
-                                <h1>Book</h1>
-                                <a href="">
-                                    <img src="{% static 'img/books.jpg' %}" alt="book" style="width:100%">
-                                </a>
-
-                            </center>
-                        </div>
-                        <div class="product">
-                            <center>
-                                <h1>Pencil</h1>
-                                <a href="">
-                                    <img src="{% static 'img/pencil.jpg' %}" alt="Pencil" style="width:100%">
-                                </a>
-
-
-
-                            </center>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -93,7 +58,6 @@
                     <h3> Connect with us :</h3>
                 </div>
                 <div class="social">
-
                     <ul>
                         <li>
                             <a href="#">
@@ -120,26 +84,13 @@
                                 <img class="ss" src="{% static 'img/youtube-app-icon.png' %}" alt="yb">
                             </a>
                         </li>
-
                     </ul>
                 </div>
                 <div class="copyright">
                     <p>copyright &copy;2023 <a style="text-decoration: none;color:white;" href="#">DailyMart</a> </p>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 </body>
-
 </html>

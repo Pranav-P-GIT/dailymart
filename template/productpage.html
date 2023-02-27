@@ -9,6 +9,23 @@
     <title>Product Page</title>
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+<style>
+    .product-info button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 5px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border-radius: 2px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    }
+
+
+    .product-info button:hover {
+        background-color: red;
+    }
+</style>
 
 <body>
     <div class="main-div">
@@ -25,28 +42,42 @@
                 <p>✯ Top Brands ✯ COD ✯ Premium Quality.</p>
             </center>
         </div>
+
         <div class="product-div">
+
             <div class="product">
                 <center>
                     <div class="product-image">
-                        <h1>BooK</h1>
+                        <h1>{{data.name}}</h1>
                         <a href="">
-                            <img class="product-img" src="{% static 'img/books.jpg' %}" alt="book">
+                            <img class="product-img" src="{{data.img.url}}" alt="image">
                         </a>
+                        <p>{{data.disc}}</p>
+
                     </div>
-                    
                 </center>
             </div>
             <div class="details">
                 <div class="product-info">
-                        <h4>Discription</h4>
-                        <h4>Quantity</h4>
-                        <h4>Delivery time</h4>
 
-                </div>
-                <div class="buttonn">
-                    <button>Check Out</button>
 
+                    <p>FREE Delivery</p>
+                    <p>Delivery by 17th Feb,Friday</p>
+                    <p>10 Days Return Policy</p>
+
+                    {% if data.price != total %}
+                    <h4>Special Price</h4>
+                    <h3><b style="color:red;">Flat {{data.discount}}% off</b></h3>
+                    <h3><s style="color:red;size: 20px;">₹{{data.price}}</s>
+                        {% endif %}
+                        <h4>AMOUNT TO PAY:</h4>
+                        <h2 style="color:red;"> ₹{{total}} </h2>
+                        <form action="{% url 'billingpage' %}?id={{data.id}}" method="post">
+                            {% csrf_token %}
+                            <p>Quantity :<input type="number" placeholder="1" id="q" name="q" min="1" max="5" required>
+                            </p><br>
+                            <button type="submit">Check Out</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -61,7 +92,6 @@
             <h3> Connect with us :</h3>
         </div>
         <div class="social">
-
             <ul>
                 <li>
                     <a href="#">
@@ -88,16 +118,12 @@
                         <img class="ss" src="{% static 'img/youtube-app-icon.png' %}" alt="yb">
                     </a>
                 </li>
-
             </ul>
         </div>
         <div class="copyright">
-            <p>copyright &copy;2023 <a style="text-decoration: none;color:white;" href="{% url 'homepage' %}">DailyMart</a> </p>
+            <p>copyright &copy;2023 <a style="text-decoration: none;color:white;"
+                    href="{% url 'homepage' %}">DailyMart</a> </p>
         </div>
-
-
-
-
     </div>
 </body>
 
